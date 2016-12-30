@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1483041520 source:c:\users\andreea s\desktop\probleme\convertor\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+
+1483056791 source:c:\users\andreea s\desktop\probleme\convert\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+
