@@ -5,6 +5,7 @@
 using namespace std;
 bool complete=0;
 
+//1
 long double lungime()
 {
     char um[10][15]={"m", "cm", "km", "mm", "mi", "nmi", "Yd", "ft", "in" };
@@ -98,12 +99,13 @@ long double lungime()
     cout<<a<<" "<<um[y-1];
 }
 
+//2
 long double arie()
 {
     char um[11][50]={"m^2", "cm^2", "km^2", "mm^2", "ha", "a", "ac", "Yd^2", "ft^2", "in^2" };
     char unitm[11][50]={"Metri patrati", "Centimetri patrati", "Kilometri patrati", "Milimetri patrati", "Hectare", "Ari", "Acri", "Yarzi patrati", "Picioare patrate", "Inches patrati" };
     system("cls");
-    cout<<endl<<endl<<"           Conversia unitatilor de masura de Lungime"<<endl<<endl<<endl;
+    cout<<endl<<endl<<"           Conversia unitatilor de masura de Arie"<<endl<<endl<<endl;
     cout<<"                 Unitate de masura:"<<endl<<endl;
 
     cout<<"                    1. Metru patrat"<<endl;
@@ -197,6 +199,7 @@ long double arie()
     cout<<a<<" "<<um[y-1];
 }
 
+//3
 long double volum()
 {
     char um[11][50]={"m^3", "cm^3", "ml", "Yd^3", "ft^3", "in^3", "l", "gal (imp)", "bbl (imp)" };
@@ -289,6 +292,159 @@ long double volum()
     cout<<a<<" "<<um[y-1];
 }
 
+//4
+long double timp()
+{
+    char um[15][50]={"as", "fs", "ps", "ns", "microsecunda", "ms", "cs", "ds", "s", "min", "h", "zile", "saptamani" };
+    char unitm[20][50]={"Attosecunde", "Femtosecunde", "Picosecunde", "Nanosecunde", "Microsecunde", "Milisecunde", "Centisecunde", "Decisecunde", "Secunde", "Minute", "Ore", "Zile", "Saptamani" };
+    system("cls");
+    cout<<endl<<endl<<"           Conversia unitatilor de masura de Timp"<<endl<<endl<<endl;
+    cout<<"                 Unitate de masura:"<<endl<<endl;
+
+    cout<<"                    1. Attosecunda"<<endl;
+    cout<<"                    2. Femtosecunda"<<endl;
+    cout<<"                    3. Picosecunda"<<endl;
+    cout<<"                    4. Nanosecunda"<<endl;
+    cout<<"                    5. Microsecunda"<<endl;
+    cout<<"                    6. Milisecundă"<<endl;
+    cout<<"                    7. Centisecunda"<<endl;
+    cout<<"                    8. Decisecunda"<<endl;
+    cout<<"                    9. Secunda"<<endl;
+    cout<<"                    10. Minut"<<endl;
+    cout<<"                    11. Ora"<<endl;
+    cout<<"                    12. Zi"<<endl;
+    cout<<"                    13. Saptamana"<<endl<<endl;
+    cout<<"      Convertire : " ;
+
+    int x,y;
+    cin>>x; cin>>y;
+    cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
+    cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
+
+    long double a;
+    cin>>a; //cout<<" "<<um[x-1];
+
+    //transform din unitatea data in metru patrat
+    switch(x)
+    {
+    case 1:
+        a=a/6;
+        break;
+    case 2:
+        a=a/6;
+        break;
+    case 3:
+        a=a/6;
+        break;
+    case 4:
+        a=a/60000000000;
+        break;
+    case 5:
+        a=a/60000000;
+        break;
+    case 6:
+        a=a/60000;
+        break;
+    case 7:
+        a=a/6000;
+        break;
+    case 8:
+        a=a/600;
+        break;
+    case 9:
+        a=a/60;
+        break;
+    case 10:
+        break;
+    case 11:
+        a=a*60;
+        break;
+    case 12:
+        a=a*1440;
+        break;
+    case 13:
+        a=a*10080;
+        break;
+    }
+
+
+    switch(y)
+    {
+    case 1:
+        a=a*6;
+        break;
+    case 2:
+        a=a*6;
+        break;
+    case 3:
+        a=a*6;
+        break;
+    case 4:
+        a=a*60000000000;
+        break;
+    case 5:
+        a=a*60000000;
+        break;
+    case 6:
+        a=a*60000;
+        break;
+    case 7:
+        a=a*6000;
+        break;
+    case 8:
+        a=a*600;
+        break;
+    case 9:
+        a=a*60;
+        break;
+    case 10:
+        break;
+    case 11:
+        a=a/60;
+        break;
+    case 12:
+        a=a/1440;
+        break;
+    case 13:
+        a=a/10080;
+        break;
+    }
+    cout<<endl<<"      Valoarea in "<<unitm[y-1]<<" : ";
+    cout<<a;
+    if(x==1)
+        if(y==2)
+            cout<<" * 10^-3";
+        else if(y==3)
+                cout<<" * 10^-6";
+            else if(y!=1)
+                    cout<<" * 10^-19";
+
+    if(x==2)
+        if(y==1)
+            cout<<" * 10^3";
+        else if(y==3)
+                cout<<" * 10^-3";
+            else if(y!=2)
+                    cout<<" * 10^-16";
+
+    if(x==3)
+        if(y==1)
+            cout<<" * 10^6";
+        else if(y==2)
+                cout<<" * 10^3";
+            else if(y!=1)
+                    cout<<" * 10^-13";
+    if(y==1 && (x!=1 && x!=2 && x!=3))
+        cout<<" * 10^19";
+    if(y==2 && (x!=1 && x!=2 && x!=3))
+        cout<<" * 10^16";
+    if(y==3 && (x!=1 && x!=2 && x!=3))
+        cout<<" * 10^13";
+
+    cout<<" "<<um[y-1];
+}
+
+//6
 long double temperatura()
 {
     char unitm[11][50]={"Grade Celsius", "Grade Kelvin", "Grade Rankine", "Grade Fahrenheit"};
@@ -345,13 +501,14 @@ long double temperatura()
     cout<<a;
 }
 
+//7
 long double masa()
 {
 
     char um[11][15]={"g", "kg", "lb", "mg", "oz (Av)", "oz (Troy)", "slug", "t"};
     char unitm[11][50]={"Grame", "Kilograme", "Funte (pound)", "Miligrame", "Uncii (Avoirdupois)", "Uncii (Troy)", "Slug", "Tone"};
     system("cls");
-    cout<<endl<<endl<<"           Conversia unitatilor de masura de Tmperatura"<<endl<<endl<<endl;
+    cout<<endl<<endl<<"           Conversia unitatilor de masura de Masa"<<endl<<endl<<endl;
     cout<<"                 Unitate de masura:"<<endl<<endl;
 
     cout<<"                    1. Grame"<<endl;
@@ -370,7 +527,7 @@ long double masa()
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
     long double a;
-    cin>>a; cout<<" "<<um[x-1];
+    cin>>a; //cout<<" "<<um[x-1];
 
     //transform din unitatea data in metru patrat
     switch(x)
@@ -477,7 +634,7 @@ int main()
         volum();
         break;
     case 4:
-        //timp();
+        timp();
         break;
     case 5:
         //viteza();
