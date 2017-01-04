@@ -588,6 +588,155 @@ long double masa()
     cout<<a<<" "<<um[y-1];
 }
 
+
+
+// 8
+long double energie()
+{
+    char um[15][50]={"Btu", "cal", "erg", "ft*lbf", "in*lbf", "J", "kcal", "kJ", "kW*h", "quad BTU", "tcc", "th", "W*h", "W*s" };
+    char unitm[20][50]={"British Thermal Unit", "Calorii", "Erg", "Picioare * Livre-forta", "Inches * Livre-forta", "Jouli", "Kilocalorii", "Kilojouli", "Kilowatt * Ora", "Quad BTU", "Tona de combustibil conventional", "Thermie", "Watt * Ora", "Watt * Secunda" };
+    system("cls");
+    cout<<endl<<endl<<"           Conversia unitatilor de masura de Energie"<<endl<<endl<<endl;
+    cout<<"                 Unitate de masura:"<<endl<<endl;
+
+    cout<<"                    1. British Thermal Unit"<<endl;
+    cout<<"                    2. Calorie"<<endl;
+    cout<<"                    3. Erg"<<endl;
+    cout<<"                    4. Picioare * Livre-forta"<<endl;
+    cout<<"                    5. Inches * Livre-forta"<<endl;
+    cout<<"                    6. Jouli"<<endl;
+    cout<<"                    7. Kilocalorie"<<endl;
+    cout<<"                    8. Kilojouli"<<endl;
+    cout<<"                    9. Kilowatt * Ora"<<endl;
+    cout<<"                    10. Quad BTU"<<endl;
+    cout<<"                    11. Tona de combustibil conventional"<<endl;
+    cout<<"                    12. Thermie"<<endl;
+    cout<<"                    13. Watt * Ora"<<endl;
+    cout<<"                    14. Watt * Secunda"<<endl<<endl;
+
+    cout<<"      Convertire : " ;
+
+    int x,y;
+    cin>>x; cin>>y;
+    cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
+    cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
+
+    long double a;
+    cin>>a; //cout<<" "<<um[x-1];
+
+    //transform din unitatea data in Jouli
+    switch(x)
+    {
+    case 1:
+        a=a*1055.06;
+        break;
+    case 2:
+        a=a*4.1868;
+        break;
+    case 3:
+        a=a/10000000;
+        break;
+    case 4:
+        a=a*1.356;
+        break;
+    case 5:
+        a=a*0.113;
+        break;
+    case 6:
+        break;
+    case 7:
+        a=a*4186.8;
+        break;
+    case 8:
+        a=a*1000;
+        break;
+    case 9:
+        a=a*3600000;
+        break;
+    case 10:
+        a=a*1055.06;
+        break;
+    case 11:
+        a=a*2.93076;
+        break;
+    case 12:
+        a=a*4186800;
+        break;
+    case 13:
+        a=a*3600;
+        break;
+    case 14:
+        break;
+    }
+
+
+    switch(y)
+    {
+    case 1:
+        a=a*0.000948;
+        break;
+    case 2:
+        a=a*0.2388;
+        break;
+    case 3:
+        a=a*10000000;
+        break;
+    case 4:
+        a=a*0.737;
+        break;
+    case 5:
+        a=a*8.8507;
+        break;
+    case 6:
+        break;
+    case 7:
+        a=a*0.0002388;
+        break;
+    case 8:
+        a=a*0.001;
+        break;
+    case 9:
+        a=a*0.0000002778;
+        break;
+    case 10:
+        a=a*9.478;
+        break;
+    case 11:
+        a=a*3.412;
+        break;
+    case 12:
+        a=a*0.00000023884;
+        break;
+    case 13:
+        a=a*0.0002778;
+        break;
+    case 14:
+        break;
+    }
+    if(x==10 && y==10)
+        a=a/10000;
+    if(x==11 && y==11)
+        a=a/10;
+    if(x==10 && y==11)
+        a=a*10000;
+    cout<<endl<<"      Valoarea in "<<unitm[y-1]<<" : ";
+    cout<<a<<" "<<um[y-1];
+    if(x==11 && y==10)
+        cout<<" * 10^-9";
+    if(x==10 && y!=10 && y!=11)
+        cout<<" * 10^15";
+    if(y==10 && x!=10 && x!=11)
+        cout<<" * 10^-19";
+    if(x==11 && y!=11 && y!=10)
+        cout<<" * 10^10";
+    if(y==11 && x!=11 && x!=10)
+        cout<<" * 10^-11";
+}
+
+
+
+
+
 int main()
 {
     START :
@@ -646,7 +795,7 @@ int main()
         masa();
         break;
     case 8:
-        //energie();
+        energie();
         break;
     case 9:
         //presiune();
