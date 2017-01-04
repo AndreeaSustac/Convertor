@@ -9,8 +9,11 @@ bool complete=0;
 long double lungime()
 {
     char um[10][15]={"m", "cm", "km", "mm", "mi", "nmi", "Yd", "ft", "in" };
-    char unitm[10][20]={"Metri", "Centimetri", "Kilometri", "Milimetri", "Mile", "Mila maritima", "Yarzi", "Picioare (feets)", "Inches" };
+    char unitm[10][20]={"Metri", "Centimetri", "Kilometri", "Milimetri", "Mile", "Mila maritima", "Yarzi",
+            "Picioare (feets)", "Inches" };
+
     system("cls");
+
     cout<<endl<<endl<<"           Conversia unitatilor de masura de Lungime"<<endl<<endl<<endl;
     cout<<"                 Unitate de masura:"<<endl<<endl;
 
@@ -103,7 +106,8 @@ long double lungime()
 long double arie()
 {
     char um[11][50]={"m^2", "cm^2", "km^2", "mm^2", "ha", "a", "ac", "Yd^2", "ft^2", "in^2" };
-    char unitm[11][50]={"Metri patrati", "Centimetri patrati", "Kilometri patrati", "Milimetri patrati", "Hectare", "Ari", "Acri", "Yarzi patrati", "Picioare patrate", "Inches patrati" };
+    char unitm[11][50]={"Metri patrati", "Centimetri patrati", "Kilometri patrati", "Milimetri patrati", "Hectare",
+            "Ari", "Acri", "Yarzi patrati", "Picioare patrate", "Inches patrati" };
     system("cls");
     cout<<endl<<endl<<"           Conversia unitatilor de masura de Arie"<<endl<<endl<<endl;
     cout<<"                 Unitate de masura:"<<endl<<endl;
@@ -203,8 +207,11 @@ long double arie()
 long double volum()
 {
     char um[11][50]={"m^3", "cm^3", "ml", "Yd^3", "ft^3", "in^3", "l", "gal (imp)", "bbl (imp)" };
-    char unitm[11][50]={"Metri cubi", "Centimetri cubi", "Mililitri", "Yarzi cubi", "Picioare cubi", "Inches cubi", "Litri", "Galoane (imperial)", "Barili (imperial)" };
+    char unitm[11][50]={"Metri cubi", "Centimetri cubi", "Mililitri", "Yarzi cubi", "Picioare cubi", "Inches cubi",
+            "Litri", "Galoane (imperial)", "Barili (imperial)" };
+
     system("cls");
+
     cout<<endl<<endl<<"           Conversia unitatilor de masura de Volum"<<endl<<endl<<endl;
     cout<<"                 Unitate de masura:"<<endl<<endl;
 
@@ -296,7 +303,8 @@ long double volum()
 long double timp()
 {
     char um[15][50]={"as", "fs", "ps", "ns", "microsecunda", "ms", "cs", "ds", "s", "min", "h", "zile", "saptamani" };
-    char unitm[20][50]={"Attosecunde", "Femtosecunde", "Picosecunde", "Nanosecunde", "Microsecunde", "Milisecunde", "Centisecunde", "Decisecunde", "Secunde", "Minute", "Ore", "Zile", "Saptamani" };
+    char unitm[20][50]={"Attosecunde", "Femtosecunde", "Picosecunde", "Nanosecunde", "Microsecunde", "Milisecunde",
+                "Centisecunde", "Decisecunde", "Secunde", "Minute", "Ore", "Zile", "Saptamani" };
     system("cls");
     cout<<endl<<endl<<"           Conversia unitatilor de masura de Timp"<<endl<<endl<<endl;
     cout<<"                 Unitate de masura:"<<endl<<endl;
@@ -506,7 +514,8 @@ long double masa()
 {
 
     char um[11][15]={"g", "kg", "lb", "mg", "oz (Av)", "oz (Troy)", "slug", "t"};
-    char unitm[11][50]={"Grame", "Kilograme", "Funte (pound)", "Miligrame", "Uncii (Avoirdupois)", "Uncii (Troy)", "Slug", "Tone"};
+    char unitm[11][50]={"Grame", "Kilograme", "Funte (pound)", "Miligrame", "Uncii (Avoirdupois)", "Uncii (Troy)",
+                "Slug", "Tone"};
     system("cls");
     cout<<endl<<endl<<"           Conversia unitatilor de masura de Masa"<<endl<<endl<<endl;
     cout<<"                 Unitate de masura:"<<endl<<endl;
@@ -594,8 +603,12 @@ long double masa()
 long double energie()
 {
     char um[15][50]={"Btu", "cal", "erg", "ft*lbf", "in*lbf", "J", "kcal", "kJ", "kW*h", "quad BTU", "tcc", "th", "W*h", "W*s" };
-    char unitm[20][50]={"British Thermal Unit", "Calorii", "Erg", "Picioare * Livre-forta", "Inches * Livre-forta", "Jouli", "Kilocalorii", "Kilojouli", "Kilowatt * Ora", "Quad BTU", "Tona de combustibil conventional", "Thermie", "Watt * Ora", "Watt * Secunda" };
+    char unitm[20][50]={"British Thermal Unit", "Calorii", "Erg", "Picioare * Livre-forta", "Inches * Livre-forta", "Jouli",
+                "Kilocalorii", "Kilojouli", "Kilowatt * Ora", "Quad BTU", "Tona de combustibil conventional",
+                "Thermie", "Watt * Ora","Watt * Secunda" };
+
     system("cls");
+
     cout<<endl<<endl<<"           Conversia unitatilor de masura de Energie"<<endl<<endl<<endl;
     cout<<"                 Unitate de masura:"<<endl<<endl;
 
@@ -733,8 +746,156 @@ long double energie()
         cout<<" * 10^-11";
 }
 
+long double densitate()
+{
+    char um[15][50]={"g/cm^3", "g/l", "g/m^3", "g/mm^3", "kg/cm^3", "kg/l", "kg/m^3", "ib/ft^3", "ib/in^3", "ib/gal", "mg/cm^3", "mg/l", "mg/m^3", "oz/gal", "oz/ft^3", "oz/in^3", "t/m^3" };
+    char unitm[20][50]={"Gram / Centimetru cub", "Gram / Litru", "Gram / Metru cub", "Gram / Milimetru cub",
+                "Kilogram / Centimetru cub", "Kilogram / Litru", "Kilogram / Metru cub", "Funte (pound) / Piciare  cubi",
+                 "Funte (pound) / Inches cubi", "Funte (pound) / Galon (imp)", "Miligram / Centimetru cub",
+                  "Miligram / Litru", "Miligram / Metru cub", "Uncii / Galon (imp)", "Uncii / Piciare  cubi",
+                   "Uncii / Inches cubi", "Tone / Metru cub" };
+
+    system("cls");
+
+    cout<<endl<<endl<<"           Conversia unitatilor de masura de Densitate"<<endl<<endl<<endl;
+    cout<<"                 Unitate de masura:"<<endl<<endl;
+
+    cout<<"                    1. Gram / Centimetru cub"<<endl;
+    cout<<"                    2. Gram / Litru"<<endl;
+    cout<<"                    3. Gram / Metru cub"<<endl;
+    cout<<"                    4. Gram / Milimetru cub"<<endl;
+    cout<<"                    5. Kilogram / Centimetru cub"<<endl;
+    cout<<"                    6. Kilogram / Litru"<<endl;
+    cout<<"                    7. Kilogram / Metru cub"<<endl;
+    cout<<"                    8. Funte (pound) / Piciare  cubi"<<endl;
+    cout<<"                    9. Funte (pound) / Inches cubi"<<endl;
+    cout<<"                    10. Funte (pound) / Galon (imp)"<<endl;
+    cout<<"                    11. Miligram / Centimetru cub"<<endl;
+    cout<<"                    12. Miligram / Litru"<<endl;
+    cout<<"                    13. Miligram / Metru cub"<<endl;
+    cout<<"                    14. Uncii / Galon (imp)"<<endl;
+    cout<<"                    15. Uncii / Piciare  cubi"<<endl;
+    cout<<"                    16. Uncii / Inches cubi"<<endl;
+    cout<<"                    17. Tone / Metru cub"<<endl<<endl;
+
+    cout<<"      Convertire : " ;
+
+    int x,y;
+    cin>>x; cin>>y;
+    cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
+    cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
+
+    long double a;
+    cin>>a; //cout<<" "<<um[x-1];
+
+    //transform din unitatea data in Jouli
+    switch(x)
+    {
+    case 1:
+        a=a*1055.06;
+        break;
+    case 2:
+        a=a*4.1868;
+        break;
+    case 3:
+        a=a/10000000;
+        break;
+    case 4:
+        a=a*1.356;
+        break;
+    case 5:
+        a=a*0.113;
+        break;
+    case 6:
+        break;
+    case 7:
+        a=a*4186.8;
+        break;
+    case 8:
+        a=a*1000;
+        break;
+    case 9:
+        a=a*3600000;
+        break;
+    case 10:
+        a=a*1055.06;
+        break;
+    case 11:
+        a=a*2.93076;
+        break;
+    case 12:
+        a=a*4186800;
+        break;
+    case 13:
+        a=a*3600;
+        break;
+    case 14:
+        break;
+    case 15:
+        a=a*4186800;
+        break;
+    case 16:
+        a=a*3600;
+        break;
+    case 17:
+        break;
+    }
 
 
+    switch(y)
+    {
+    case 1:
+        a=a*0.000948;
+        break;
+    case 2:
+        a=a*0.2388;
+        break;
+    case 3:
+        a=a*10000000;
+        break;
+    case 4:
+        a=a*0.737;
+        break;
+    case 5:
+        a=a*8.8507;
+        break;
+    case 6:
+        break;
+    case 7:
+        a=a*0.0002388;
+        break;
+    case 8:
+        a=a*0.001;
+        break;
+    case 9:
+        a=a*0.0000002778;
+        break;
+    case 10:
+        a=a*9.478;
+        break;
+    case 11:
+        a=a*3.412;
+        break;
+    case 12:
+        a=a*0.00000023884;
+        break;
+    case 13:
+        a=a*0.0002778;
+        break;
+    case 14:
+        break;
+    case 15:
+        a=a*0.00000023884;
+        break;
+    case 16:
+        a=a*0.0002778;
+        break;
+    case 17:
+        break;
+    }
+    cout<<endl<<"      Valoarea in "<<unitm[y-1]<<" : ";
+    cout<<a<<" "<<um[y-1];
+}
 
 
 int main()
@@ -801,7 +962,7 @@ int main()
         //presiune();
         break;
     case 10:
-        //densitate();
+        densitate();
         break;
     case 11:
         //consum_combustibil();
