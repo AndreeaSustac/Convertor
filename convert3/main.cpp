@@ -236,7 +236,7 @@ long double volum()
     long double a;
     cin>>a; //cout<<" "<<um[x-1];
 
-    //transform din unitatea data in metru patrat
+    //transform din unitatea data in metru cub
     switch(x)
     {
     case 1:
@@ -334,7 +334,7 @@ long double timp()
     long double a;
     cin>>a; //cout<<" "<<um[x-1];
 
-    //transform din unitatea data in metru patrat
+    //transform din unitatea data in minut
     switch(x)
     {
     case 1:
@@ -459,35 +459,35 @@ long double timp()
 // 5
 long double viteza()
 {
-    char um[20][50]={"g/cm^3", "g/l", "g/m^3", "g/mm^3", "kg/cm^3", "kg/l", "kg/m^3", "ib/ft^3", "ib/in^3", "ib/gal", "mg/cm^3", "mg/l", "mg/m^3", "oz/gal", "oz/ft^3", "oz/in^3", "t/m^3" };
-    char unitm[20][50]={"Gram / Centimetru cub", "Gram / Litru", "Gram / Metru cub", "Gram / Milimetru cub",
-                "Kilogram / Centimetru cub", "Kilogram / Litru", "Kilogram / Metru cub", "Funte (pound) / Piciare  cubi",
-                 "Funte (pound) / Inches cubi", "Funte (pound) / Galon (imp)", "Miligram / Centimetru cub",
-                  "Miligram / Litru", "Miligram / Metru cub", "Uncii / Galon (imp)", "Uncii / Piciare  cubi",
-                   "Uncii / Inches cubi", "Tone / Metru cub" };
+    char um[20][50]={"cm/min", "cm/s", "ft/h", "ft/min", "ft/s", "in/s", "km/h", "km/min", "km/s", "m/h", "m/min", "m/s", "mi/s", "mi/min", "nmi/h", "yd/h", "yd/min", "yd/s" };
+    char unitm[20][50]={"Centimetru / Minut", "Centimetru / Secuda", "Picioare / Ora", "Picioare / Minut",
+                "Picioare / Secunda", "Inches / Secunda", "Kilometru / Ora", "Kilometru / Minut", "Kilometru / Secunda",
+                 "Metru / Ora", "Metru / Minut", "Metru / Secunda", "Mila / Secunda", "Mila / Minut", "Mila marina / Ora",
+                "Yarzi / Ora", "Yarzi / Minut", "Yarzi / Secuda" };
 
     system("cls");
 
     cout<<endl<<endl<<"           Conversia unitatilor de masura de Viteza"<<endl<<endl<<endl;
     cout<<"                 Unitate de masura:"<<endl<<endl;
 
-    cout<<"                    1. Gram / Centimetru cub"<<endl;
-    cout<<"                    2. Gram / Litru"<<endl;
-    cout<<"                    3. Gram / Metru cub"<<endl;
-    cout<<"                    4. Gram / Milimetru cub"<<endl;
-    cout<<"                    5. Kilogram / Centimetru cub"<<endl;
-    cout<<"                    6. Kilogram / Litru"<<endl;
-    cout<<"                    7. Kilogram / Metru cub"<<endl;
-    cout<<"                    8. Funte (pound) / Piciare  cubi"<<endl;
-    cout<<"                    9. Funte (pound) / Inches cubi"<<endl;
-    cout<<"                    10. Funte (pound) / Galon (imp)"<<endl;
-    cout<<"                    11. Miligram / Centimetru cub"<<endl;
-    cout<<"                    12. Miligram / Litru"<<endl;
-    cout<<"                    13. Miligram / Metru cub"<<endl;
-    cout<<"                    14. Uncii / Galon (imp)"<<endl;
-    cout<<"                    15. Uncii / Piciare  cubi"<<endl;
-    cout<<"                    16. Uncii / Inches cubi"<<endl;
-    cout<<"                    17. Tone / Metru cub"<<endl<<endl;
+    cout<<"                    1. Centimetru / Minut"<<endl;
+    cout<<"                    2. Centimetru / Secuda"<<endl;
+    cout<<"                    3. Picioare / Ora"<<endl;
+    cout<<"                    4. Picioare / Minut"<<endl;
+    cout<<"                    5. Picioare / Secunda"<<endl;
+    cout<<"                    6. Inches / Secunda"<<endl;
+    cout<<"                    7. Kilometru / Ora"<<endl;
+    cout<<"                    8. Kilometru / Minut"<<endl;
+    cout<<"                    9. Kilometru / Secunda"<<endl;
+    cout<<"                    10. Metru / Ora"<<endl;
+    cout<<"                    11. Metru / Minut"<<endl;
+    cout<<"                    12. Metru / Secunda"<<endl;
+    cout<<"                    13. Mila / Secunda"<<endl;
+    cout<<"                    14. Mila / Minut"<<endl;
+    cout<<"                    15. Mila marina / Ora"<<endl;
+    cout<<"                    16. Yarzi / Ora"<<endl;
+    cout<<"                    17. Yarzi / Minut"<<endl;
+    cout<<"                    18. Yarzi / Secuda"<<endl<<endl;
 
     cout<<"      Convertire : " ;
 
@@ -499,58 +499,61 @@ long double viteza()
     long double a;
     cin>>a; //cout<<" "<<um[x-1];
 
-    //transform din unitatea data in Jouli
+    //transform din unitatea data in m/s
     switch(x)
     {
     case 1:
-        a=a*1000;
+        a=a*0.0001666667;
         break;
     case 2:
-        a=a;
+        a=a*0.01;
         break;
     case 3:
-        a=a*0.001;
+        a=a*0.000084667;
         break;
     case 4:
-        a=a*1000000;
+        a=a*0.00508;
         break;
     case 5:
-        a=a*1000000;
+        a=a*0.3048;
         break;
     case 6:
-        a=a*1000;
+        a=a*0.0254;
         break;
     case 7:
+        a=a*0.27777778;
         break;
     case 8:
-        a=a*16.018;
+        a=a*16.666667;
         break;
     case 9:
-        a=a*27679.89858;
+        a=a*1000;
         break;
     case 10:
-        a=a*119.8264273;
+        a=a*0.000277778;
         break;
     case 11:
-        a=a;
+        a=a*0.016666667;
         break;
     case 12:
-        a=a*0.001;
         break;
     case 13:
-        a=a*0.000001;
+        a=a*1609.344;
         break;
     case 14:
-        a=a*7.489;
+        a=a*26.8224;
         break;
     case 15:
-        a=a*1.001153961;
+        a=a*0.5144;
         break;
     case 16:
-        a=a*1729.994044;
+        a=a*0.000254;
         break;
     case 17:
-        a=a*1000;
+        a=a*0.015240004;
+        break;
+    case 18:
+        a=a*0.9144002494;
         break;
     }
 
@@ -558,54 +561,57 @@ long double viteza()
     switch(y)
     {
     case 1:
-        a=a*0.001;
+        a=a*5999.9988;
         break;
     case 2:
-        a=a;
+        a=a*100;
         break;
     case 3:
-        a=a*1000;
+        a=a*11810.977;
         break;
     case 4:
-        a=a*0.000001;
+        a=a*196.8504;
         break;
     case 5:
-        a=a*0.000001;
+        a=a*3.28084;
         break;
     case 6:
-        a=a*0.001;
+        a=a*39.370079;
         break;
     case 7:
+        a=a*3.5999999;
         break;
     case 8:
-        a=a*0.06243;
+        a=a*0.059999999;
         break;
     case 9:
-        a=a*0.0000361273;
+        a=a*0.001;
         break;
     case 10:
-        a=a*0.0083454;
+        a=a*3599.997;
         break;
     case 11:
-        a=a;
+        a=a*59.999999;
         break;
     case 12:
-        a=a*1000;
         break;
     case 13:
-        a=a*1000000;
+        a=a*0.00062137119;
         break;
     case 14:
-        a=a*0.1335265;
+        a=a*0.03728;
         break;
     case 15:
-        a=a*0.999;
+        a=a*1.944012441679;
         break;
     case 16:
-        a=a*0.000578;
+        a=a*3937.007874;
         break;
     case 17:
-        a=a*0.001;
+        a=a*65.61678;
+        break;
+    case 18:
+        a=a*1.093613;
         break;
     }
     cout<<endl<<"      Valoarea in "<<unitm[y-1]<<" : ";
@@ -636,7 +642,7 @@ long double temperatura()
     long double a;
     cin>>a;
 
-    //transform din unitatea data in metru patrat
+    //transform din unitatea data in grade celsius
     switch(x)
     {
     case 1:
@@ -702,7 +708,7 @@ long double masa()
     long double a;
     cin>>a; //cout<<" "<<um[x-1];
 
-    //transform din unitatea data in metru patrat
+    //transform din unitatea data in kilograme
     switch(x)
     {
     case 1:
@@ -954,7 +960,7 @@ long double densitate()
     long double a;
     cin>>a; //cout<<" "<<um[x-1];
 
-    //transform din unitatea data in Jouli
+    //transform din unitatea data in Kilogram / Metru cub
     switch(x)
     {
     case 1:
@@ -1117,7 +1123,7 @@ int main()
         timp();
         break;
     case 5:
-        //viteza();
+        viteza();
         break;
     case 6:
         temperatura();
