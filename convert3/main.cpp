@@ -916,6 +916,161 @@ long double energie()
         cout<<" * 10^-11";
 }
 
+//9
+long double presiune()
+{
+    char um[20][50]={"at", "atm", "bar", "inH2O", "inHg", "kp/cm^2", "kPa", "lbf/ft^2", "lbf/in^2", "mbar", "mH2O", "mmH2O", "mmHg", "MPa", "N/mm^2", "Pa", "torr" };
+    char unitm[20][50]={"Atmosfera tehnica", "Atmosfera standard", "Bar", "Tol coloana de apa",
+                "Tol coloana de mercur", "Kilopond / Centimetru patrat", "Kilopascal", "Funt-forta (pounds force) / Picioare patrate",
+                 "Funt-forta (pounds force) / Inches patrati", "Millibar", "Metri coloana de apa",
+                  "Milimetri coloana de apa","Milimetri coloana de mercur", "Megapascal", "Newton / Milimetru patrat", "Pascal", "Torr" };
+
+    system("cls");
+
+    cout<<endl<<endl<<"           Conversia unitatilor de masura de Presiune"<<endl<<endl<<endl;
+    cout<<"                 Unitate de masura:"<<endl<<endl;
+
+    cout<<"                    1. Atmosfera tehnica"<<endl;
+    cout<<"                    2. Atmosfera standard"<<endl;
+    cout<<"                    3. Bar"<<endl;
+    cout<<"                    4. Tol coloana de apa"<<endl;
+    cout<<"                    5. Tol coloana de mercur"<<endl;
+    cout<<"                    6. Kilopond / Centimetru patrat"<<endl;
+    cout<<"                    7. Kilopascal"<<endl;
+    cout<<"                    8. Funt-forta (pounds force) / Picioare patrate"<<endl;
+    cout<<"                    9. Funt-forta (pounds force) / Inches patrati"<<endl;
+    cout<<"                    10. Millibar"<<endl;
+    cout<<"                    11. Metri coloana de apa"<<endl;
+    cout<<"                    12. Milimetri coloana de apa"<<endl;
+    cout<<"                    13. Milimetri coloana de mercur"<<endl;
+    cout<<"                    14. Megapascal"<<endl;
+    cout<<"                    15. Newton / Milimetru patrat"<<endl;
+    cout<<"                    16. Pascal"<<endl;
+    cout<<"                    17. Torr"<<endl<<endl;
+
+    cout<<"      Convertire : " ;
+
+    int x,y;
+    cin>>x; cin>>y;
+    cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
+    cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
+
+    long double a;
+    cin>>a; //cout<<" "<<um[x-1];
+
+    //transform din unitatea data in Pascal
+    switch(x)
+    {
+    case 1:
+        a=a*98066.5;
+        break;
+    case 2:
+        a=a*101325.2738;
+        break;
+    case 3:
+        a=a*98000;
+        break;
+    case 4:
+        a=a*248.84;
+        break;
+    case 5:
+        a=a*3386.388;
+        break;
+    case 6:
+        a=a*98000;
+        break;
+    case 7:
+        a=a*1000;
+        break;
+    case 8:
+        a=a*47.88;
+        break;
+    case 9:
+        a=a*6894.7573;
+        break;
+    case 10:
+        a=a*98;
+        break;
+    case 11:
+        a=a*9800;
+        break;
+    case 12:
+        a=a*9.8;
+        break;
+    case 13:
+        a=a*133.32237;
+        break;
+    case 14:
+        a=a*1000000;
+        break;
+    case 15:
+        a=a*1000000;
+        break;
+    case 16:
+        break;
+    case 17:
+        a=a*133.32237;
+        break;
+    }
+
+
+    switch(y)
+    {
+    case 1:
+        a=a/98066.5;
+        break;
+    case 2:
+        a=a/101325.2738;
+        break;
+    case 3:
+        a=a/98000;
+        break;
+    case 4:
+        a=a/248.84;
+        break;
+    case 5:
+        a=a/3386.388;
+        break;
+    case 6:
+        a=a/98000;
+        break;
+    case 7:
+        a=a/1000;
+        break;
+    case 8:
+        a=a/47.88;
+        break;
+    case 9:
+        a=a/6894.7573;
+        break;
+    case 10:
+        a=a/98;
+        break;
+    case 11:
+        a=a/9800;
+        break;
+    case 12:
+        a=a/9.8;
+        break;
+    case 13:
+        a=a/133.32237;
+        break;
+    case 14:
+        a=a/1000000;
+        break;
+    case 15:
+        a=a/1000000;
+        break;
+    case 16:
+        break;
+    case 17:
+        a=a/133.32237;
+        break;
+    }
+    cout<<endl<<"      Valoarea in "<<unitm[y-1]<<" : ";
+    cout<<a<<" "<<um[y-1];
+}
+
 
 // 10
 long double densitate()
@@ -1135,7 +1290,7 @@ int main()
         energie();
         break;
     case 9:
-        //presiune();
+        presiune();
         break;
     case 10:
         densitate();
