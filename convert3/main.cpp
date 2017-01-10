@@ -1229,6 +1229,85 @@ long double densitate()
 }
 
 
+// 11
+long double consum_combustibil()
+{
+    char um[10][15]={"l / 100 km", "km / l", "mi / gal", "gal / 100 mi", "mi / l", "l / 100 mi" };
+    char unitm[10][50]={"Litri la 100 de kilometri", "Kilometri pe litru", "Mile pe galon", "Galoane la 100 de mila",
+            "Mile pe litru", "Litri la 100 de mile" };
+
+    system("cls");
+
+    cout<<endl<<endl<<"           Conversia unitatilor de masura de Consum al Combustibilului"<<endl<<endl<<endl;
+    cout<<"                 Unitate de masura:"<<endl<<endl;
+
+    cout<<"                    1. Litri la 100 de kilometri"<<endl;
+    cout<<"                    2. Kilometri pe litru"<<endl;
+    cout<<"                    3. Mile pe galon"<<endl;
+    cout<<"                    4. Galoane la 100 de mila"<<endl;
+    cout<<"                    5. Mile pe litru"<<endl;
+    cout<<"                    6. Litri la 100 de mile"<<endl<<endl;
+    cout<<"      Convertire : " ;
+
+    int x,y;
+    cin>>x; cin>>y;
+    cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
+    cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
+
+    long double a;
+    cin>>a;
+    //cout<<" "<<um[x-1];
+
+    //transform din unitatea data in litri la 100 de km
+    switch(x)
+    {
+    case 1:
+        break;
+    case 2:
+        a=100/a;
+        break;
+    case 3:
+        a=235.21/a;
+        break;
+    case 4:
+        a=a*2.352;
+        break;
+    case 5:
+        a=62.14/a;
+        break;
+    case 6:
+        a=a*0.6214;
+        break;
+    }
+
+
+    switch(y)
+    {
+    case 1:
+        break;
+    case 2:
+        a=100/a;
+        break;
+    case 3:
+        a=235.21/a;
+        break;
+    case 4:
+        a=a*0.4251;
+        break;
+    case 5:
+        a=62.14/a;
+        break;
+    case 6:
+        a=a*1.609;
+        break;
+    }
+
+    cout<<endl<<"      Valoarea in "<<unitm[y-1]<<" : ";
+    cout<<a<<" "<<um[y-1];
+}
+
+
+
 int main()
 {
     START :
@@ -1296,7 +1375,7 @@ int main()
         densitate();
         break;
     case 11:
-        //consum_combustibil();
+        consum_combustibil();
         break;
     }
 
