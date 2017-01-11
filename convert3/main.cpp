@@ -5,14 +5,24 @@
 using namespace std;
 bool complete=0;
 
+
+int valid(char a[15], int n)
+{
+    int i;
+    char x[19][3]={"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19"};
+    for(i=0;i<n;i++)
+        if(strcmp(a,x[i])==0)
+            return i+1;
+    return 0;
+}
+
 //1
 long double lungime()
 {
     char um[10][15]= {"m", "cm", "km", "mm", "mi", "nmi", "Yd", "ft", "in" };
     char unitm[10][20]= {"Metri", "Centimetri", "Kilometri", "Milimetri", "Mile", "Mila maritima", "Yarzi",
-                         "Picioare (feets)", "Inches"
-                        };
-    start1:
+                         "Picioare (feets)", "Inches" };
+//start1:
     system("cls");
 
     cout<<endl<<endl<<"           Conversia unitatilor de masura de Lungime"<<endl<<endl<<endl;
@@ -28,34 +38,28 @@ long double lungime()
     cout<<"                    8. Picioare (feets)"<<endl;
     cout<<"                    9. Inches"<<endl<<endl;
 
-//start1:
-    cout<<"      Convertire : " ;
-
-    float x1,y1;
+start1:
+    cout<<"      Introduceti unitatea de masura initiala : " ;
+    char s[15], t[15];
+    cin.get();
+    cin.get(s,50);
+    if(!valid(s,9))
+    {
+        cout<<endl<<"        Date incorecte !!"<<endl;
+        goto start1;
+    }
+start2:
+    cout<<"      Introduceti unitatea de masura in care doriti sa convertiti : " ;
+    cin.get();
+    cin.get(t,50);
+    if(!valid(t,9))
+    {
+        cout<<endl<<"        Date incorecte !!"<<endl;
+        goto start2;
+    }
     int x,y;
-    cin>>x1;
-    cin>>y1;
-    if(x1==(int)x1)
-        x=x1;
-    else
-    {
-        cout<<"        Error"<<endl;
-        cout<<endl<<"        Introduceti date corecte"<<endl;
-        cout<<"      Daca doriti sa continuati apasati orice tasta";
-        int d;
-        cin>>d;
-        //system("cls");
-        goto start1;
-    }
-    if(y1==(int)y1)
-        y=y1;
-    else
-    {
-        cout<<"        Error"<<endl;
-        cout<<endl<<"        Introduceti date corecte";
-        goto start1;
-    }
-
+    x=valid(s,9);
+    y=valid(t,9);
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
@@ -91,9 +95,6 @@ long double lungime()
         break;
     case 9:
         a=a*0.0254;
-        break;
-    default:
-        cout<<endl<<"Datele introduse nu sunt corecte !"<<endl;
         break;
     }
 
@@ -154,11 +155,32 @@ long double arie()
     cout<<"                    8. Yarzi patrati"<<endl;
     cout<<"                    9. Picioare patrate"<<endl;
     cout<<"                    10. Inches patrati"<<endl<<endl;
-    cout<<"      Convertire : " ;
+
+start1:
+    cout<<"      Introduceti unitatea de masura initiala : " ;
+    char s[15], t[15];
+    cin.get();
+    cin.get(s,50);
+    if(!valid(s,10))
+    {
+        cout<<endl<<"        Date incorecte !!"<<endl;
+        goto start1;
+    }
+
+start2:
+    cout<<"      Introduceti unitatea de masura in care doriti sa convertiti : " ;
+    cin.get();
+    cin.get(t,50);
+    if(!valid(t,10))
+    {
+        cout<<endl<<"        Date incorecte !!"<<endl;
+        goto start2;
+    }
 
     int x,y;
-    cin>>x;
-    cin>>y;
+    x=valid(s,10);
+    y=valid(t,10);
+
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
@@ -258,11 +280,32 @@ long double volum()
     cout<<"                    7. Litri"<<endl;
     cout<<"                    8. Galon (imperial)"<<endl;
     cout<<"                    9. Barili (imperial)"<<endl<<endl;
-    cout<<"      Convertire : " ;
+
+start1:
+    cout<<"      Introduceti unitatea de masura initiala : " ;
+    char s[15], t[15];
+    cin.get();
+    cin.get(s,50);
+    if(!valid(s,9))
+    {
+        cout<<endl<<"        Date incorecte !!"<<endl;
+        goto start1;
+    }
+
+start2:
+    cout<<"      Introduceti unitatea de masura in care doriti sa convertiti : " ;
+    cin.get();
+    cin.get(t,50);
+    if(!valid(t,9))
+    {
+        cout<<endl<<"        Date incorecte !!"<<endl;
+        goto start2;
+    }
 
     int x,y;
-    cin>>x;
-    cin>>y;
+    x=valid(s,9);
+    y=valid(t,9);
+
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
@@ -342,6 +385,7 @@ long double timp()
                          "Centisecunde", "Decisecunde", "Secunde", "Minute", "Ore", "Zile", "Saptamani"
                         };
     system("cls");
+
     cout<<endl<<endl<<"           Conversia unitatilor de masura de Timp"<<endl<<endl<<endl;
     cout<<"                 Unitate de masura:"<<endl<<endl;
 
@@ -358,11 +402,32 @@ long double timp()
     cout<<"                    11. Ora"<<endl;
     cout<<"                    12. Zi"<<endl;
     cout<<"                    13. Saptamana"<<endl<<endl;
-    cout<<"      Convertire : " ;
+
+start1:
+    cout<<"      Introduceti unitatea de masura initiala : " ;
+    char s[15], t[15];
+    cin.get();
+    cin.get(s,50);
+    if(!valid(s,13))
+    {
+        cout<<endl<<"        Date incorecte !!"<<endl;
+        goto start1;
+    }
+
+start2:
+    cout<<"      Introduceti unitatea de masura in care doriti sa convertiti : " ;
+    cin.get();
+    cin.get(t,50);
+    if(!valid(t,13))
+    {
+        cout<<endl<<"        Date incorecte !!"<<endl;
+        goto start2;
+    }
 
     int x,y;
-    cin>>x;
-    cin>>y;
+    x=valid(s,13);
+    y=valid(t,13);
+
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
@@ -1386,16 +1451,17 @@ START :
     cout<<"        10.Densitate"<<endl;
     cout<<"        11.Consum combustibil"<<endl;
 
-    citiretipconversie:
+citiretipconversie:
     cout<<endl<<"        Alege tipul de conversie : ";
 
     char s1[100];
-    cin>>s1;
+    cin.get(s1,20);
     if(strcmp(s1,"1")!=0 && strcmp(s1,"2")!=0 && strcmp(s1,"3")!=0 && strcmp(s1,"4")!=0 && strcmp(s1,"5")!=0 &&
-        strcmp(s1,"6")!=0 && strcmp(s1,"7")!=0 && strcmp(s1,"8")!=0 && strcmp(s1,"9")!=0 && strcmp(s1,"10")!=0 &&
-        strcmp(s1,"11")!=0 )
+            strcmp(s1,"6")!=0 && strcmp(s1,"7")!=0 && strcmp(s1,"8")!=0 && strcmp(s1,"9")!=0 && strcmp(s1,"10")!=0 &&
+            strcmp(s1,"11")!=0 )
     {
         cout<<"        Date incorecte !!"<<endl;
+        cin.get();
         goto citiretipconversie;
     }
     else
@@ -1405,18 +1471,7 @@ START :
             x=10;
         else if(strcmp(s1, "11")==0)
             x=11;
-            else x=s1[0]-48;
-    /*float x;
-    cin>>x;
-    bool ok=0, ok1=0;
-    if(x==(int)x)
-        ok1=1;
-    for(int i=1; i<=11; i++)
-        if(x==i)
-            ok=1;
-    if(ok==0 || ok1==0)
-        cout<<"        Date incorecte !!";
-    else*/
+        else x=s1[0]-48;
         switch(x)
         {
         case 1:
@@ -1455,10 +1510,12 @@ START :
         }
     }
     cout<<endl<<endl;
+
 citire:
-    cout<<endl<<"        Apasa [1] pentru revenire la meniul principal "<<endl;
-    char s[100];
-    cin>>s;
+    cout<<endl<<"        Apasa [1] pentru revenire la meniul principal ";
+    char s[50];
+    cin.get();
+    cin.get(s,20);
     if(strcmp(s,"1")!=0)
     {
         cout<<"        Date incorecte !!"<<endl;
@@ -1466,6 +1523,7 @@ citire:
     }
     else
     {
+        cin.get();
         system("cls");
         goto START;
     }
