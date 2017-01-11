@@ -8,9 +8,10 @@ bool complete=0;
 //1
 long double lungime()
 {
-    char um[10][15]={"m", "cm", "km", "mm", "mi", "nmi", "Yd", "ft", "in" };
-    char unitm[10][20]={"Metri", "Centimetri", "Kilometri", "Milimetri", "Mile", "Mila maritima", "Yarzi",
-            "Picioare (feets)", "Inches" };
+    char um[10][15]= {"m", "cm", "km", "mm", "mi", "nmi", "Yd", "ft", "in" };
+    char unitm[10][20]= {"Metri", "Centimetri", "Kilometri", "Milimetri", "Mile", "Mila maritima", "Yarzi",
+                         "Picioare (feets)", "Inches"
+                        };
 
     system("cls");
 
@@ -29,7 +30,8 @@ long double lungime()
     cout<<"      Convertire : " ;
 
     int x,y;
-    cin>>x; cin>>y;
+    cin>>x;
+    cin>>y;
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
@@ -105,9 +107,10 @@ long double lungime()
 //2
 long double arie()
 {
-    char um[11][50]={"m^2", "cm^2", "km^2", "mm^2", "ha", "a", "ac", "Yd^2", "ft^2", "in^2" };
-    char unitm[11][50]={"Metri patrati", "Centimetri patrati", "Kilometri patrati", "Milimetri patrati", "Hectare",
-            "Ari", "Acri", "Yarzi patrati", "Picioare patrate", "Inches patrati" };
+    char um[11][50]= {"m^2", "cm^2", "km^2", "mm^2", "ha", "a", "ac", "Yd^2", "ft^2", "in^2" };
+    char unitm[11][50]= {"Metri patrati", "Centimetri patrati", "Kilometri patrati", "Milimetri patrati", "Hectare",
+                         "Ari", "Acri", "Yarzi patrati", "Picioare patrate", "Inches patrati"
+                        };
 
     system("cls");
 
@@ -127,7 +130,8 @@ long double arie()
     cout<<"      Convertire : " ;
 
     int x,y;
-    cin>>x; cin>>y;
+    cin>>x;
+    cin>>y;
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
@@ -208,9 +212,10 @@ long double arie()
 //3
 long double volum()
 {
-    char um[11][50]={"m^3", "cm^3", "ml", "Yd^3", "ft^3", "in^3", "l", "gal (imp)", "bbl (imp)" };
-    char unitm[11][50]={"Metri cubi", "Centimetri cubi", "Mililitri", "Yarzi cubi", "Picioare cubi", "Inches cubi",
-            "Litri", "Galoane (imperial)", "Barili (imperial)" };
+    char um[11][50]= {"m^3", "cm^3", "ml", "Yd^3", "ft^3", "in^3", "l", "gal (imp)", "bbl (imp)" };
+    char unitm[11][50]= {"Metri cubi", "Centimetri cubi", "Mililitri", "Yarzi cubi", "Picioare cubi", "Inches cubi",
+                         "Litri", "Galoane (imperial)", "Barili (imperial)"
+                        };
 
     system("cls");
 
@@ -229,7 +234,8 @@ long double volum()
     cout<<"      Convertire : " ;
 
     int x,y;
-    cin>>x; cin>>y;
+    cin>>x;
+    cin>>y;
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
@@ -304,9 +310,10 @@ long double volum()
 //4
 long double timp()
 {
-    char um[15][50]={"as", "fs", "ps", "ns", "microsecunda", "ms", "cs", "ds", "s", "min", "h", "zile", "saptamani" };
-    char unitm[20][50]={"Attosecunde", "Femtosecunde", "Picosecunde", "Nanosecunde", "Microsecunde", "Milisecunde",
-                "Centisecunde", "Decisecunde", "Secunde", "Minute", "Ore", "Zile", "Saptamani" };
+    char um[15][50]= {"as", "fs", "ps", "ns", "microsecunda", "ms", "cs", "ds", "s", "min", "h", "zile", "saptamani" };
+    char unitm[20][50]= {"Attosecunde", "Femtosecunde", "Picosecunde", "Nanosecunde", "Microsecunde", "Milisecunde",
+                         "Centisecunde", "Decisecunde", "Secunde", "Minute", "Ore", "Zile", "Saptamani"
+                        };
     system("cls");
     cout<<endl<<endl<<"           Conversia unitatilor de masura de Timp"<<endl<<endl<<endl;
     cout<<"                 Unitate de masura:"<<endl<<endl;
@@ -327,7 +334,8 @@ long double timp()
     cout<<"      Convertire : " ;
 
     int x,y;
-    cin>>x; cin>>y;
+    cin>>x;
+    cin>>y;
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
@@ -425,25 +433,25 @@ long double timp()
         if(y==2)
             cout<<" * 10^-3";
         else if(y==3)
-                cout<<" * 10^-6";
-            else if(y!=1)
-                    cout<<" * 10^-19";
+            cout<<" * 10^-6";
+        else if(y!=1)
+            cout<<" * 10^-19";
 
     if(x==2)
         if(y==1)
             cout<<" * 10^3";
         else if(y==3)
-                cout<<" * 10^-3";
-            else if(y!=2)
-                    cout<<" * 10^-16";
+            cout<<" * 10^-3";
+        else if(y!=2)
+            cout<<" * 10^-16";
 
     if(x==3)
         if(y==1)
             cout<<" * 10^6";
         else if(y==2)
-                cout<<" * 10^3";
-            else if(y!=1)
-                    cout<<" * 10^-13";
+            cout<<" * 10^3";
+        else if(y!=1)
+            cout<<" * 10^-13";
     if(y==1 && (x!=1 && x!=2 && x!=3))
         cout<<" * 10^19";
     if(y==2 && (x!=1 && x!=2 && x!=3))
@@ -459,11 +467,12 @@ long double timp()
 // 5
 long double viteza()
 {
-    char um[20][50]={"cm/min", "cm/s", "ft/h", "ft/min", "ft/s", "in/s", "km/h", "km/min", "km/s", "m/h", "m/min", "m/s", "mi/s", "mi/min", "nmi/h", "yd/h", "yd/min", "yd/s" };
-    char unitm[20][50]={"Centimetru / Minut", "Centimetru / Secuda", "Picioare / Ora", "Picioare / Minut",
-                "Picioare / Secunda", "Inches / Secunda", "Kilometru / Ora", "Kilometru / Minut", "Kilometru / Secunda",
-                 "Metru / Ora", "Metru / Minut", "Metru / Secunda", "Mila / Secunda", "Mila / Minut", "Mila marina / Ora",
-                "Yarzi / Ora", "Yarzi / Minut", "Yarzi / Secuda" };
+    char um[20][50]= {"cm/min", "cm/s", "ft/h", "ft/min", "ft/s", "in/s", "km/h", "km/min", "km/s", "m/h", "m/min", "m/s", "mi/s", "mi/min", "nmi/h", "yd/h", "yd/min", "yd/s" };
+    char unitm[20][50]= {"Centimetru / Minut", "Centimetru / Secuda", "Picioare / Ora", "Picioare / Minut",
+                         "Picioare / Secunda", "Inches / Secunda", "Kilometru / Ora", "Kilometru / Minut", "Kilometru / Secunda",
+                         "Metru / Ora", "Metru / Minut", "Metru / Secunda", "Mila / Secunda", "Mila / Minut", "Mila marina / Ora",
+                         "Yarzi / Ora", "Yarzi / Minut", "Yarzi / Secuda"
+                        };
 
     system("cls");
 
@@ -492,7 +501,8 @@ long double viteza()
     cout<<"      Convertire : " ;
 
     int x,y;
-    cin>>x; cin>>y;
+    cin>>x;
+    cin>>y;
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
@@ -621,7 +631,7 @@ long double viteza()
 //6
 long double temperatura()
 {
-    char unitm[11][50]={"Grade Celsius", "Grade Kelvin", "Grade Rankine", "Grade Fahrenheit"};
+    char unitm[11][50]= {"Grade Celsius", "Grade Kelvin", "Grade Rankine", "Grade Fahrenheit"};
 
     system("cls");
 
@@ -635,7 +645,8 @@ long double temperatura()
     cout<<"      Convertire : " ;
 
     int x,y;
-    cin>>x; cin>>y;
+    cin>>x;
+    cin>>y;
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
@@ -681,9 +692,10 @@ long double temperatura()
 long double masa()
 {
 
-    char um[11][15]={"g", "kg", "lb", "mg", "oz (Av)", "oz (Troy)", "slug", "t"};
-    char unitm[11][50]={"Grame", "Kilograme", "Funte (pound)", "Miligrame", "Uncii (Avoirdupois)", "Uncii (Troy)",
-                "Slug", "Tone"};
+    char um[11][15]= {"g", "kg", "lb", "mg", "oz (Av)", "oz (Troy)", "slug", "t"};
+    char unitm[11][50]= {"Grame", "Kilograme", "Funte (pound)", "Miligrame", "Uncii (Avoirdupois)", "Uncii (Troy)",
+                         "Slug", "Tone"
+                        };
 
     system("cls");
 
@@ -701,7 +713,8 @@ long double masa()
     cout<<"      Convertire : " ;
 
     int x,y;
-    cin>>x; cin>>y;
+    cin>>x;
+    cin>>y;
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
@@ -772,10 +785,11 @@ long double masa()
 // 8
 long double energie()
 {
-    char um[15][50]={"Btu", "cal", "erg", "ft*lbf", "in*lbf", "J", "kcal", "kJ", "kW*h", "quad BTU", "tcc", "th", "W*h", "W*s" };
-    char unitm[20][50]={"British Thermal Unit", "Calorii", "Erg", "Picioare * Livre-forta", "Inches * Livre-forta", "Jouli",
-                "Kilocalorii", "Kilojouli", "Kilowatt * Ora", "Quad BTU", "Tona de combustibil conventional",
-                "Thermie", "Watt * Ora","Watt * Secunda" };
+    char um[15][50]= {"Btu", "cal", "erg", "ft*lbf", "in*lbf", "J", "kcal", "kJ", "kW*h", "quad BTU", "tcc", "th", "W*h", "W*s" };
+    char unitm[20][50]= {"British Thermal Unit", "Calorii", "Erg", "Picioare * Livre-forta", "Inches * Livre-forta", "Jouli",
+                         "Kilocalorii", "Kilojouli", "Kilowatt * Ora", "Quad BTU", "Tona de combustibil conventional",
+                         "Thermie", "Watt * Ora","Watt * Secunda"
+                        };
 
     system("cls");
 
@@ -800,7 +814,8 @@ long double energie()
     cout<<"      Convertire : " ;
 
     int x,y;
-    cin>>x; cin>>y;
+    cin>>x;
+    cin>>y;
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
@@ -919,11 +934,12 @@ long double energie()
 //9
 long double presiune()
 {
-    char um[20][50]={"at", "atm", "bar", "inH2O", "inHg", "kp/cm^2", "kPa", "lbf/ft^2", "lbf/in^2", "mbar", "mH2O", "mmH2O", "mmHg", "MPa", "N/mm^2", "Pa", "torr" };
-    char unitm[20][50]={"Atmosfera tehnica", "Atmosfera standard", "Bar", "Tol coloana de apa",
-                "Tol coloana de mercur", "Kilopond / Centimetru patrat", "Kilopascal", "Funt-forta (pounds force) / Picioare patrate",
-                 "Funt-forta (pounds force) / Inches patrati", "Millibar", "Metri coloana de apa",
-                  "Milimetri coloana de apa","Milimetri coloana de mercur", "Megapascal", "Newton / Milimetru patrat", "Pascal", "Torr" };
+    char um[20][50]= {"at", "atm", "bar", "inH2O", "inHg", "kp/cm^2", "kPa", "lbf/ft^2", "lbf/in^2", "mbar", "mH2O", "mmH2O", "mmHg", "MPa", "N/mm^2", "Pa", "torr" };
+    char unitm[20][50]= {"Atmosfera tehnica", "Atmosfera standard", "Bar", "Tol coloana de apa",
+                         "Tol coloana de mercur", "Kilopond / Centimetru patrat", "Kilopascal", "Funt-forta (pounds force) / Picioare patrate",
+                         "Funt-forta (pounds force) / Inches patrati", "Millibar", "Metri coloana de apa",
+                         "Milimetri coloana de apa","Milimetri coloana de mercur", "Megapascal", "Newton / Milimetru patrat", "Pascal", "Torr"
+                        };
 
     system("cls");
 
@@ -951,7 +967,8 @@ long double presiune()
     cout<<"      Convertire : " ;
 
     int x,y;
-    cin>>x; cin>>y;
+    cin>>x;
+    cin>>y;
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
@@ -1075,12 +1092,13 @@ long double presiune()
 // 10
 long double densitate()
 {
-    char um[20][50]={"g/cm^3", "g/l", "g/m^3", "g/mm^3", "kg/cm^3", "kg/l", "kg/m^3", "ib/ft^3", "ib/in^3", "ib/gal", "mg/cm^3", "mg/l", "mg/m^3", "oz/gal", "oz/ft^3", "oz/in^3", "t/m^3" };
-    char unitm[20][50]={"Gram / Centimetru cub", "Gram / Litru", "Gram / Metru cub", "Gram / Milimetru cub",
-                "Kilogram / Centimetru cub", "Kilogram / Litru", "Kilogram / Metru cub", "Funte (pound) / Piciare  cubi",
-                 "Funte (pound) / Inches cubi", "Funte (pound) / Galon (imp)", "Miligram / Centimetru cub",
-                  "Miligram / Litru", "Miligram / Metru cub", "Uncii / Galon (imp)", "Uncii / Piciare  cubi",
-                   "Uncii / Inches cubi", "Tone / Metru cub" };
+    char um[20][50]= {"g/cm^3", "g/l", "g/m^3", "g/mm^3", "kg/cm^3", "kg/l", "kg/m^3", "ib/ft^3", "ib/in^3", "ib/gal", "mg/cm^3", "mg/l", "mg/m^3", "oz/gal", "oz/ft^3", "oz/in^3", "t/m^3" };
+    char unitm[20][50]= {"Gram / Centimetru cub", "Gram / Litru", "Gram / Metru cub", "Gram / Milimetru cub",
+                         "Kilogram / Centimetru cub", "Kilogram / Litru", "Kilogram / Metru cub", "Funte (pound) / Piciare  cubi",
+                         "Funte (pound) / Inches cubi", "Funte (pound) / Galon (imp)", "Miligram / Centimetru cub",
+                         "Miligram / Litru", "Miligram / Metru cub", "Uncii / Galon (imp)", "Uncii / Piciare  cubi",
+                         "Uncii / Inches cubi", "Tone / Metru cub"
+                        };
 
     system("cls");
 
@@ -1108,7 +1126,8 @@ long double densitate()
     cout<<"      Convertire : " ;
 
     int x,y;
-    cin>>x; cin>>y;
+    cin>>x;
+    cin>>y;
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
@@ -1232,9 +1251,10 @@ long double densitate()
 // 11
 long double consum_combustibil()
 {
-    char um[10][15]={"l / 100 km", "km / l", "mi / gal", "gal / 100 mi", "mi / l", "l / 100 mi" };
-    char unitm[10][50]={"Litri la 100 de kilometri", "Kilometri pe litru", "Mile pe galon", "Galoane la 100 de mila",
-            "Mile pe litru", "Litri la 100 de mile" };
+    char um[10][15]= {"l / 100 km", "km / l", "mi / gal", "gal / 100 mi", "mi / l", "l / 100 mi" };
+    char unitm[10][50]= {"Litri la 100 de kilometri", "Kilometri pe litru", "Mile pe galon", "Galoane la 100 de mila",
+                         "Mile pe litru", "Litri la 100 de mile"
+                        };
 
     system("cls");
 
@@ -1250,7 +1270,8 @@ long double consum_combustibil()
     cout<<"      Convertire : " ;
 
     int x,y;
-    cin>>x; cin>>y;
+    cin>>x;
+    cin>>y;
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
@@ -1310,7 +1331,7 @@ long double consum_combustibil()
 
 int main()
 {
-    START :
+START :
     system("color 30");
 
     cout<<endl;
@@ -1340,48 +1361,63 @@ int main()
 
 
     cout<<endl<<"        Alege tipul de conversie : ";
-    int x;
+    float x;
     cin>>x;
-    switch(x)
-    {
-    case 1:
-        lungime();
-        break;
-    case 2:
-        arie();
-        break;
-    case 3:
-        volum();
-        break;
-    case 4:
-        timp();
-        break;
-    case 5:
-        viteza();
-        break;
-    case 6:
-        temperatura();
-        break;
-    case 7:
-        masa();
-        break;
-    case 8:
-        energie();
-        break;
-    case 9:
-        presiune();
-        break;
-    case 10:
-        densitate();
-        break;
-    case 11:
-        consum_combustibil();
-        break;
-    }
+    bool ok=0, ok1=0;
+    if(x==(int)x)
+        ok1=1;
+    for(int i=1; i<=11; i++)
+        if(x==i)
+            ok=1;
+    if(ok==0 || ok1==0)
+        cout<<"        Date incorecte !!";
+    else
+        switch((int)x)
+        {
+        case 1:
+            lungime();
+            break;
+        case 2:
+            arie();
+            break;
+        case 3:
+            volum();
+            break;
+        case 4:
+            timp();
+            break;
+        case 5:
+            viteza();
+            break;
+        case 6:
+            temperatura();
+            break;
+        case 7:
+            masa();
+            break;
+        case 8:
+            energie();
+            break;
+        case 9:
+            presiune();
+            break;
+        case 10:
+            densitate();
+            break;
+        case 11:
+            consum_combustibil();
+            break;
+        }
+    cout<<endl<<endl;
+    citire:
+    cout<<endl<<"        Apasa [1] pentru revenire la meniul principal ";
+    float y;
+    cin>>y;
+    if(y!=1)
+        {cout<<"        Date incorecte !!"<<endl;
+         goto citire;}
 
-    cout<<endl<<endl<<endl<<"      Apasa [1] pentru revenire la meniul principal ";
-    cin>>x;
-    if(x)
+    if(y==1)
     {
         system("cls");
         goto START;
