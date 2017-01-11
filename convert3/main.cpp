@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 using namespace std;
 bool complete=0;
 
@@ -12,7 +12,7 @@ long double lungime()
     char unitm[10][20]= {"Metri", "Centimetri", "Kilometri", "Milimetri", "Mile", "Mila maritima", "Yarzi",
                          "Picioare (feets)", "Inches"
                         };
-
+    start1:
     system("cls");
 
     cout<<endl<<endl<<"           Conversia unitatilor de masura de Lungime"<<endl<<endl<<endl;
@@ -27,11 +27,35 @@ long double lungime()
     cout<<"                    7. Yarzi"<<endl;
     cout<<"                    8. Picioare (feets)"<<endl;
     cout<<"                    9. Inches"<<endl<<endl;
+
+//start1:
     cout<<"      Convertire : " ;
 
+    float x1,y1;
     int x,y;
-    cin>>x;
-    cin>>y;
+    cin>>x1;
+    cin>>y1;
+    if(x1==(int)x1)
+        x=x1;
+    else
+    {
+        cout<<"        Error"<<endl;
+        cout<<endl<<"        Introduceti date corecte"<<endl;
+        cout<<"      Daca doriti sa continuati apasati orice tasta";
+        int d;
+        cin>>d;
+        //system("cls");
+        goto start1;
+    }
+    if(y1==(int)y1)
+        y=y1;
+    else
+    {
+        cout<<"        Error"<<endl;
+        cout<<endl<<"        Introduceti date corecte";
+        goto start1;
+    }
+
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
@@ -67,6 +91,9 @@ long double lungime()
         break;
     case 9:
         a=a*0.0254;
+        break;
+    default:
+        cout<<endl<<"Datele introduse nu sunt corecte !"<<endl;
         break;
     }
 
@@ -1359,9 +1386,27 @@ START :
     cout<<"        10.Densitate"<<endl;
     cout<<"        11.Consum combustibil"<<endl;
 
-
+    citiretipconversie:
     cout<<endl<<"        Alege tipul de conversie : ";
-    float x;
+
+    char s1[100];
+    cin>>s1;
+    if(strcmp(s1,"1")!=0 && strcmp(s1,"2")!=0 && strcmp(s1,"3")!=0 && strcmp(s1,"4")!=0 && strcmp(s1,"5")!=0 &&
+        strcmp(s1,"6")!=0 && strcmp(s1,"7")!=0 && strcmp(s1,"8")!=0 && strcmp(s1,"9")!=0 && strcmp(s1,"10")!=0 &&
+        strcmp(s1,"11")!=0 )
+    {
+        cout<<"        Date incorecte !!"<<endl;
+        goto citiretipconversie;
+    }
+    else
+    {
+        int x;
+        if(strcmp(s1, "10")==0)
+            x=10;
+        else if(strcmp(s1, "11")==0)
+            x=11;
+            else x=s1[0]-48;
+    /*float x;
     cin>>x;
     bool ok=0, ok1=0;
     if(x==(int)x)
@@ -1371,8 +1416,8 @@ START :
             ok=1;
     if(ok==0 || ok1==0)
         cout<<"        Date incorecte !!";
-    else
-        switch((int)x)
+    else*/
+        switch(x)
         {
         case 1:
             lungime();
@@ -1408,16 +1453,18 @@ START :
             consum_combustibil();
             break;
         }
+    }
     cout<<endl<<endl;
-    citire:
-    cout<<endl<<"        Apasa [1] pentru revenire la meniul principal ";
-    float y;
-    cin>>y;
-    if(y!=1)
-        {cout<<"        Date incorecte !!"<<endl;
-         goto citire;}
-
-    if(y==1)
+citire:
+    cout<<endl<<"        Apasa [1] pentru revenire la meniul principal "<<endl;
+    char s[100];
+    cin>>s;
+    if(strcmp(s,"1")!=0)
+    {
+        cout<<"        Date incorecte !!"<<endl;
+        goto citire;
+    }
+    else
     {
         system("cls");
         goto START;
