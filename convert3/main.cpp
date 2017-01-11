@@ -16,13 +16,40 @@ int valid(char a[15], int n)
     return 0;
 }
 
+void unitconversie(int &x, int &y, int nr)
+{
+start1:
+    cout<<endl<<"        Introduceti unitatea de masura initiala : " ;
+    char s[15], t[15];
+    cin.get();
+    cin.get(s,15);
+    if(!valid(s,nr))
+    {
+        cout<<"        Date incorecte !!"<<endl;
+        goto start1;
+    }
+
+start2:
+    cout<<endl<<"        Introduceti unitatea de masura in care doriti sa convertiti : " ;
+    cin.get();
+    cin.get(t,15);
+    if(!valid(t,nr))
+    {
+        cout<<"        Date incorecte !!"<<endl;
+        goto start2;
+    }
+    x=valid(s,nr);
+    y=valid(t,nr);
+}
+
+
 //1
 long double lungime()
 {
     char um[10][15]= {"m", "cm", "km", "mm", "mi", "nmi", "Yd", "ft", "in" };
     char unitm[10][20]= {"Metri", "Centimetri", "Kilometri", "Milimetri", "Mile", "Mila maritima", "Yarzi",
                          "Picioare (feets)", "Inches" };
-//start1:
+
     system("cls");
 
     cout<<endl<<endl<<"           Conversia unitatilor de masura de Lungime"<<endl<<endl<<endl;
@@ -38,28 +65,11 @@ long double lungime()
     cout<<"                    8. Picioare (feets)"<<endl;
     cout<<"                    9. Inches"<<endl<<endl;
 
-start1:
-    cout<<"      Introduceti unitatea de masura initiala : " ;
-    char s[15], t[15];
-    cin.get();
-    cin.get(s,50);
-    if(!valid(s,9))
-    {
-        cout<<endl<<"        Date incorecte !!"<<endl;
-        goto start1;
-    }
-start2:
-    cout<<"      Introduceti unitatea de masura in care doriti sa convertiti : " ;
-    cin.get();
-    cin.get(t,50);
-    if(!valid(t,9))
-    {
-        cout<<endl<<"        Date incorecte !!"<<endl;
-        goto start2;
-    }
-    int x,y;
-    x=valid(s,9);
-    y=valid(t,9);
+    int x=0, y=0;
+    unitconversie(x,y,9);
+
+    system("cls");
+    cout<<endl<<endl<<"           Conversia unitatilor de masura de Lungime"<<endl<<endl<<endl;
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
@@ -156,30 +166,11 @@ long double arie()
     cout<<"                    9. Picioare patrate"<<endl;
     cout<<"                    10. Inches patrati"<<endl<<endl;
 
-start1:
-    cout<<"      Introduceti unitatea de masura initiala : " ;
-    char s[15], t[15];
-    cin.get();
-    cin.get(s,50);
-    if(!valid(s,10))
-    {
-        cout<<endl<<"        Date incorecte !!"<<endl;
-        goto start1;
-    }
+    int x=0, y=0;
+    unitconversie(x,y,10);
 
-start2:
-    cout<<"      Introduceti unitatea de masura in care doriti sa convertiti : " ;
-    cin.get();
-    cin.get(t,50);
-    if(!valid(t,10))
-    {
-        cout<<endl<<"        Date incorecte !!"<<endl;
-        goto start2;
-    }
-
-    int x,y;
-    x=valid(s,10);
-    y=valid(t,10);
+    system("cls");
+    cout<<endl<<endl<<"           Conversia unitatilor de masura de Arie"<<endl<<endl<<endl;
 
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
@@ -281,30 +272,11 @@ long double volum()
     cout<<"                    8. Galon (imperial)"<<endl;
     cout<<"                    9. Barili (imperial)"<<endl<<endl;
 
-start1:
-    cout<<"      Introduceti unitatea de masura initiala : " ;
-    char s[15], t[15];
-    cin.get();
-    cin.get(s,50);
-    if(!valid(s,9))
-    {
-        cout<<endl<<"        Date incorecte !!"<<endl;
-        goto start1;
-    }
+    int x=0, y=0;
+    unitconversie(x,y,9);
 
-start2:
-    cout<<"      Introduceti unitatea de masura in care doriti sa convertiti : " ;
-    cin.get();
-    cin.get(t,50);
-    if(!valid(t,9))
-    {
-        cout<<endl<<"        Date incorecte !!"<<endl;
-        goto start2;
-    }
-
-    int x,y;
-    x=valid(s,9);
-    y=valid(t,9);
+    system("cls");
+    cout<<endl<<endl<<"           Conversia unitatilor de masura de Volum"<<endl<<endl<<endl;
 
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
@@ -403,30 +375,11 @@ long double timp()
     cout<<"                    12. Zi"<<endl;
     cout<<"                    13. Saptamana"<<endl<<endl;
 
-start1:
-    cout<<"      Introduceti unitatea de masura initiala : " ;
-    char s[15], t[15];
-    cin.get();
-    cin.get(s,50);
-    if(!valid(s,13))
-    {
-        cout<<endl<<"        Date incorecte !!"<<endl;
-        goto start1;
-    }
+    int x=0, y=0;
+    unitconversie(x,y,13);
 
-start2:
-    cout<<"      Introduceti unitatea de masura in care doriti sa convertiti : " ;
-    cin.get();
-    cin.get(t,50);
-    if(!valid(t,13))
-    {
-        cout<<endl<<"        Date incorecte !!"<<endl;
-        goto start2;
-    }
-
-    int x,y;
-    x=valid(s,13);
-    y=valid(t,13);
+    system("cls");
+    cout<<endl<<endl<<"           Conversia unitatilor de masura de Timp"<<endl<<endl<<endl;
 
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
@@ -590,11 +543,12 @@ long double viteza()
     cout<<"                    17. Yarzi / Minut"<<endl;
     cout<<"                    18. Yarzi / Secuda"<<endl<<endl;
 
-    cout<<"      Convertire : " ;
+    int x=0, y=0;
+    unitconversie(x,y,18);
 
-    int x,y;
-    cin>>x;
-    cin>>y;
+    system("cls");
+    cout<<endl<<endl<<"           Conversia unitatilor de masura de Viteza"<<endl<<endl<<endl;
+
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
@@ -727,18 +681,20 @@ long double temperatura()
 
     system("cls");
 
-    cout<<endl<<endl<<"           Conversia unitatilor de masura de Tmperatura"<<endl<<endl<<endl;
+    cout<<endl<<endl<<"           Conversia unitatilor de masura de Temperatura"<<endl<<endl<<endl;
     cout<<"                 Unitate de masura:"<<endl<<endl;
 
     cout<<"                    1. Grade Celsius"<<endl;
     cout<<"                    2. Grade Kelvin"<<endl;
     cout<<"                    3. Grade Rankine"<<endl;
     cout<<"                    4. Grade Fahrenheit"<<endl<<endl;
-    cout<<"      Convertire : " ;
 
-    int x,y;
-    cin>>x;
-    cin>>y;
+    int x=0, y=0;
+    unitconversie(x,y,4);
+
+    system("cls");
+    cout<<endl<<endl<<"           Conversia unitatilor de masura de Temperatura"<<endl<<endl<<endl;
+
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
@@ -802,11 +758,13 @@ long double masa()
     cout<<"                    6. Uncii (Troy)"<<endl;
     cout<<"                    7. Slug"<<endl;
     cout<<"                    8. Tone"<<endl<<endl;
-    cout<<"      Convertire : " ;
 
-    int x,y;
-    cin>>x;
-    cin>>y;
+    int x=0, y=0;
+    unitconversie(x,y,8);
+
+    system("cls");
+    cout<<endl<<endl<<"           Conversia unitatilor de masura de Masa"<<endl<<endl<<endl;
+
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
@@ -903,11 +861,12 @@ long double energie()
     cout<<"                    13. Watt * Ora"<<endl;
     cout<<"                    14. Watt * Secunda"<<endl<<endl;
 
-    cout<<"      Convertire : " ;
+    int x=0, y=0;
+    unitconversie(x,y,14);
 
-    int x,y;
-    cin>>x;
-    cin>>y;
+    system("cls");
+    cout<<endl<<endl<<"           Conversia unitatilor de masura de Energie"<<endl<<endl<<endl;
+
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
@@ -1056,11 +1015,12 @@ long double presiune()
     cout<<"                    16. Pascal"<<endl;
     cout<<"                    17. Torr"<<endl<<endl;
 
-    cout<<"      Convertire : " ;
+    int x=0, y=0;
+    unitconversie(x,y,17);
 
-    int x,y;
-    cin>>x;
-    cin>>y;
+    system("cls");
+    cout<<endl<<endl<<"           Conversia unitatilor de masura de Presiune"<<endl<<endl<<endl;
+
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
@@ -1215,11 +1175,12 @@ long double densitate()
     cout<<"                    16. Uncii / Inches cubi"<<endl;
     cout<<"                    17. Tone / Metru cub"<<endl<<endl;
 
-    cout<<"      Convertire : " ;
+    int x=0, y=0;
+    unitconversie(x,y,17);
 
-    int x,y;
-    cin>>x;
-    cin>>y;
+    system("cls");
+    cout<<endl<<endl<<"           Conversia unitatilor de masura de Densitate"<<endl<<endl<<endl;
+
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
@@ -1359,11 +1320,13 @@ long double consum_combustibil()
     cout<<"                    4. Galoane la 100 de mila"<<endl;
     cout<<"                    5. Mile pe litru"<<endl;
     cout<<"                    6. Litri la 100 de mile"<<endl<<endl;
-    cout<<"      Convertire : " ;
 
-    int x,y;
-    cin>>x;
-    cin>>y;
+    int x=0, y=0;
+    unitconversie(x,y,6);
+
+    system("cls");
+    cout<<endl<<endl<<"           Conversia unitatilor de masura de Consum al Combustibilului"<<endl<<endl<<endl;
+
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
     cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
