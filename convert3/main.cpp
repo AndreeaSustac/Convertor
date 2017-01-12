@@ -3,8 +3,27 @@
 #include <stdlib.h>
 #include <string.h>
 using namespace std;
-bool complete=0;
 
+
+int validnumber(char c[15], long double &a)
+{
+    char s[200];
+    int i;
+start:
+    cout<<"      Valoarea in "<<c<<" : ";
+    cin.get();
+    cin.get(s,200);
+    for(i=0;i<strlen(s);i++)
+    {
+        if((s[i]=='-' && i!=0) || s[0]=='0' || s[0]=='.' || (s[i]!='-' && s[i]!='0' && s[i]!='1' && s[i]!='2' && s[i]!='3' && s[i]!='4' && s[i]!='5' && s[i]!='6' && s[i]!='7' && s[i]!='8' && s[i]!='9' && s[i]!='.'))
+        {
+            cout<<"      Date incorecte !!"<<endl<<endl;
+            goto start;
+        }
+    }
+    a=strtod(s,NULL);
+    //cout<<a;
+}
 
 int valid(char a[15], int n)
 {
@@ -71,10 +90,10 @@ long double lungime()
     system("cls");
     cout<<endl<<endl<<"           Conversia unitatilor de masura de Lungime"<<endl<<endl<<endl;
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
-    cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
-    long double a;
-    cin>>a;
+    long double a=0;
+    validnumber(unitm[x-1], a);
+
     //cout<<" "<<um[x-1];
 
     //transform din unitatea data in metru
@@ -173,10 +192,10 @@ long double arie()
     cout<<endl<<endl<<"           Conversia unitatilor de masura de Arie"<<endl<<endl<<endl;
 
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
-    cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
-    long double a;
-    cin>>a; //cout<<" "<<um[x-1];
+    long double a=0;
+    validnumber(unitm[x-1], a);
+    //cout<<" "<<um[x-1];
 
     //transform din unitatea data in metru patrat
     switch(x)
@@ -279,10 +298,10 @@ long double volum()
     cout<<endl<<endl<<"           Conversia unitatilor de masura de Volum"<<endl<<endl<<endl;
 
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
-    cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
-    long double a;
-    cin>>a; //cout<<" "<<um[x-1];
+    long double a=0;
+    validnumber(unitm[x-1], a);
+    //cout<<" "<<um[x-1];
 
     //transform din unitatea data in metru cub
     switch(x)
@@ -382,25 +401,25 @@ long double timp()
     cout<<endl<<endl<<"           Conversia unitatilor de masura de Timp"<<endl<<endl<<endl;
 
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
-    cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
-    long double a;
-    cin>>a; //cout<<" "<<um[x-1];
+    long double a=0;
+    validnumber(unitm[x-1], a);
+    //cout<<" "<<um[x-1];
 
     //transform din unitatea data in minut
     switch(x)
     {
     case 1:
-        a=a/6;
+        a=a*1.6666666666666668e-20;
         break;
     case 2:
-        a=a/6;
+        a=a*1.6666666666666667e-17;
         break;
     case 3:
-        a=a/6;
+        a=a*1.6666666666666667e-14;
         break;
     case 4:
-        a=a/60000000000;
+        a=a*1.6666666666666667e-11;
         break;
     case 5:
         a=a/60000000;
@@ -434,13 +453,13 @@ long double timp()
     switch(y)
     {
     case 1:
-        a=a*6;
+        a=a*59999999999999990000;
         break;
     case 2:
-        a=a*6;
+        a=a*59999999999999990;
         break;
     case 3:
-        a=a*6;
+        a=a*60000000000000;
         break;
     case 4:
         a=a*60000000000;
@@ -473,38 +492,7 @@ long double timp()
         break;
     }
     cout<<endl<<"      Valoarea in "<<unitm[y-1]<<" : ";
-    cout<<a;
-    if(x==1)
-        if(y==2)
-            cout<<" * 10^-3";
-        else if(y==3)
-            cout<<" * 10^-6";
-        else if(y!=1)
-            cout<<" * 10^-19";
-
-    if(x==2)
-        if(y==1)
-            cout<<" * 10^3";
-        else if(y==3)
-            cout<<" * 10^-3";
-        else if(y!=2)
-            cout<<" * 10^-16";
-
-    if(x==3)
-        if(y==1)
-            cout<<" * 10^6";
-        else if(y==2)
-            cout<<" * 10^3";
-        else if(y!=1)
-            cout<<" * 10^-13";
-    if(y==1 && (x!=1 && x!=2 && x!=3))
-        cout<<" * 10^19";
-    if(y==2 && (x!=1 && x!=2 && x!=3))
-        cout<<" * 10^16";
-    if(y==3 && (x!=1 && x!=2 && x!=3))
-        cout<<" * 10^13";
-
-    cout<<" "<<um[y-1];
+    cout<<a<<" "<<um[y-1];
 }
 
 
@@ -550,10 +538,10 @@ long double viteza()
     cout<<endl<<endl<<"           Conversia unitatilor de masura de Viteza"<<endl<<endl<<endl;
 
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
-    cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
-    long double a;
-    cin>>a; //cout<<" "<<um[x-1];
+    long double a=0;
+    validnumber(unitm[x-1], a);
+     //cout<<" "<<um[x-1];
 
     //transform din unitatea data in m/s
     switch(x)
@@ -696,10 +684,9 @@ long double temperatura()
     cout<<endl<<endl<<"           Conversia unitatilor de masura de Temperatura"<<endl<<endl<<endl;
 
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
-    cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
-    long double a;
-    cin>>a;
+    long double a=0;
+    validnumber(unitm[x-1], a);
 
     //transform din unitatea data in grade celsius
     switch(x)
@@ -766,10 +753,10 @@ long double masa()
     cout<<endl<<endl<<"           Conversia unitatilor de masura de Masa"<<endl<<endl<<endl;
 
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
-    cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
-    long double a;
-    cin>>a; //cout<<" "<<um[x-1];
+    long double a=0;
+    validnumber(unitm[x-1], a);
+    //cout<<" "<<um[x-1];
 
     //transform din unitatea data in kilograme
     switch(x)
@@ -868,10 +855,10 @@ long double energie()
     cout<<endl<<endl<<"           Conversia unitatilor de masura de Energie"<<endl<<endl<<endl;
 
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
-    cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
-    long double a;
-    cin>>a; //cout<<" "<<um[x-1];
+    long double a=0;
+    validnumber(unitm[x-1], a);
+    //cout<<" "<<um[x-1];
 
     //transform din unitatea data in Jouli
     switch(x)
@@ -903,10 +890,10 @@ long double energie()
         a=a*3600000;
         break;
     case 10:
-        a=a*1055.06;
+        a=a*1055060000000000000;
         break;
     case 11:
-        a=a*2.93076;
+        a=a*29307600000;
         break;
     case 12:
         a=a*4186800;
@@ -948,10 +935,10 @@ long double energie()
         a=a*0.0000002778;
         break;
     case 10:
-        a=a*9.478;
+        a=a*9.47813394498891e-19;
         break;
     case 11:
-        a=a*3.412;
+        a=a*3.412084237535656e-11;
         break;
     case 12:
         a=a*0.00000023884;
@@ -962,24 +949,9 @@ long double energie()
     case 14:
         break;
     }
-    if(x==10 && y==10)
-        a=a/10000;
-    if(x==11 && y==11)
-        a=a/10;
-    if(x==10 && y==11)
-        a=a*10000;
+
     cout<<endl<<"      Valoarea in "<<unitm[y-1]<<" : ";
     cout<<a<<" "<<um[y-1];
-    if(x==11 && y==10)
-        cout<<" * 10^-9";
-    if(x==10 && y!=10 && y!=11)
-        cout<<" * 10^15";
-    if(y==10 && x!=10 && x!=11)
-        cout<<" * 10^-19";
-    if(x==11 && y!=11 && y!=10)
-        cout<<" * 10^10";
-    if(y==11 && x!=11 && x!=10)
-        cout<<" * 10^-11";
 }
 
 //9
@@ -1022,10 +994,10 @@ long double presiune()
     cout<<endl<<endl<<"           Conversia unitatilor de masura de Presiune"<<endl<<endl<<endl;
 
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
-    cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
-    long double a;
-    cin>>a; //cout<<" "<<um[x-1];
+    long double a=0;
+    validnumber(unitm[x-1], a);
+    //cout<<" "<<um[x-1];
 
     //transform din unitatea data in Pascal
     switch(x)
@@ -1182,10 +1154,10 @@ long double densitate()
     cout<<endl<<endl<<"           Conversia unitatilor de masura de Densitate"<<endl<<endl<<endl;
 
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
-    cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
-    long double a;
-    cin>>a; //cout<<" "<<um[x-1];
+    long double a=0;
+    validnumber(unitm[x-1], a);
+    //cout<<" "<<um[x-1];
 
     //transform din unitatea data in Kilogram / Metru cub
     switch(x)
@@ -1328,10 +1300,9 @@ long double consum_combustibil()
     cout<<endl<<endl<<"           Conversia unitatilor de masura de Consum al Combustibilului"<<endl<<endl<<endl;
 
     cout<<endl<<"      "<<unitm[x-1]<<" => "<<unitm[y-1]<<endl<<endl;
-    cout<<"      Valoarea in "<<unitm[x-1]<<" : ";
 
-    long double a;
-    cin>>a;
+    long double a=0;
+    validnumber(unitm[x-1], a);
     //cout<<" "<<um[x-1];
 
     //transform din unitatea data in litri la 100 de km
@@ -1475,13 +1446,14 @@ citiretipconversie:
     cout<<endl<<endl;
 
 citire:
-    cout<<endl<<"        Apasa [1] pentru revenire la meniul principal ";
-    char s[50];
     cin.get();
+
+    cout<<endl<<"               Apasa [1] pentru revenire la meniul principal ";
+    char s[50];
     cin.get(s,20);
     if(strcmp(s,"1")!=0)
     {
-        cout<<"        Date incorecte !!"<<endl;
+        cout<<"               Date incorecte !!"<<endl;
         goto citire;
     }
     else
