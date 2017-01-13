@@ -5,14 +5,14 @@
 using namespace std;
 
 
-int validnumber(char c[15], long double &a)
+int validnumber(char c[50], long double &a)
 {
     char s[200];
     int i;
 start:
     cout<<"      Valoarea in "<<c<<" : ";
-    cin.get();
-    cin.get(s,200);
+
+    cin.getline(s,200);
     for(i=0;i<strlen(s);i++)
     {
         if((s[i]=='-' && i!=0) || s[0]=='0' || s[0]=='.' || (s[i]!='-' && s[i]!='0' && s[i]!='1' && s[i]!='2' && s[i]!='3' && s[i]!='4' && s[i]!='5' && s[i]!='6' && s[i]!='7' && s[i]!='8' && s[i]!='9' && s[i]!='.'))
@@ -39,9 +39,8 @@ void unitconversie(int &x, int &y, int nr)
 {
 start1:
     cout<<endl<<"        Introduceti unitatea de masura initiala : " ;
-    char s[15], t[15];
-    cin.get();
-    cin.get(s,15);
+    char s[200], t[200];
+    cin.getline(s,200);
     if(!valid(s,nr))
     {
         cout<<"        Date incorecte !!"<<endl;
@@ -50,8 +49,8 @@ start1:
 
 start2:
     cout<<endl<<"        Introduceti unitatea de masura in care doriti sa convertiti : " ;
-    cin.get();
-    cin.get(t,15);
+
+    cin.getline(t,200);
     if(!valid(t,nr))
     {
         cout<<"        Date incorecte !!"<<endl;
@@ -496,7 +495,6 @@ long double timp()
 }
 
 
-
 // 5
 long double viteza()
 {
@@ -816,7 +814,6 @@ long double masa()
     cout<<endl<<"      Valoarea in "<<unitm[y-1]<<" : ";
     cout<<a<<" "<<um[y-1];
 }
-
 
 
 // 8
@@ -1388,14 +1385,13 @@ START :
 citiretipconversie:
     cout<<endl<<"        Alege tipul de conversie : ";
 
-    char s1[100];
-    cin.get(s1,20);
+    char s1[200];
+    cin.getline(s1,200);
     if(strcmp(s1,"1")!=0 && strcmp(s1,"2")!=0 && strcmp(s1,"3")!=0 && strcmp(s1,"4")!=0 && strcmp(s1,"5")!=0 &&
             strcmp(s1,"6")!=0 && strcmp(s1,"7")!=0 && strcmp(s1,"8")!=0 && strcmp(s1,"9")!=0 && strcmp(s1,"10")!=0 &&
             strcmp(s1,"11")!=0 )
     {
         cout<<"        Date incorecte !!"<<endl;
-        cin.get();
         goto citiretipconversie;
     }
     else
@@ -1446,11 +1442,10 @@ citiretipconversie:
     cout<<endl<<endl;
 
 citire:
-    cin.get();
 
     cout<<endl<<"               Apasa [1] pentru revenire la meniul principal ";
-    char s[50];
-    cin.get(s,20);
+    char s[200];
+    cin.getline(s,200);
     if(strcmp(s,"1")!=0)
     {
         cout<<"               Date incorecte !!"<<endl;
@@ -1458,7 +1453,7 @@ citire:
     }
     else
     {
-        cin.get();
+
         system("cls");
         goto START;
     }
