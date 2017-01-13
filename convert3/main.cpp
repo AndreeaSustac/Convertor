@@ -17,7 +17,7 @@ start:
     {
         if((s[i]=='-' && i!=0) || s[0]=='0' || s[0]=='.' || (s[i]!='-' && s[i]!='0' && s[i]!='1' && s[i]!='2' && s[i]!='3' && s[i]!='4' && s[i]!='5' && s[i]!='6' && s[i]!='7' && s[i]!='8' && s[i]!='9' && s[i]!='.'))
         {
-            cout<<"      Date incorecte !!"<<endl<<endl;
+            cout<<"      DATE INCORECTE !!"<<endl<<endl;
             goto start;
         }
     }
@@ -43,7 +43,7 @@ start1:
     cin.getline(s,200);
     if(!valid(s,nr))
     {
-        cout<<"        Date incorecte !!"<<endl;
+        cout<<"        DATE INCORECTE !!"<<endl;
         goto start1;
     }
 
@@ -53,7 +53,7 @@ start2:
     cin.getline(t,200);
     if(!valid(t,nr))
     {
-        cout<<"        Date incorecte !!"<<endl;
+        cout<<"        DATE INCORECTE !!"<<endl;
         goto start2;
     }
     x=valid(s,nr);
@@ -1391,7 +1391,7 @@ citiretipconversie:
             strcmp(s1,"6")!=0 && strcmp(s1,"7")!=0 && strcmp(s1,"8")!=0 && strcmp(s1,"9")!=0 && strcmp(s1,"10")!=0 &&
             strcmp(s1,"11")!=0 )
     {
-        cout<<"        Date incorecte !!"<<endl;
+        cout<<"        DATE INCORECTE !!"<<endl;
         goto citiretipconversie;
     }
     else
@@ -1444,17 +1444,19 @@ citiretipconversie:
 citire:
 
     cout<<endl<<"               Apasa [1] pentru revenire la meniul principal ";
+    cout<<endl<<"               Apasa [2] pentru a iesi din convertor "<<endl<<"                             ";
     char s[200];
     cin.getline(s,200);
-    if(strcmp(s,"1")!=0)
+    if(strcmp(s,"1")!=0 && strcmp(s,"2")!=0)
     {
-        cout<<"               Date incorecte !!"<<endl;
+        cout<<"               DATE INCORECTE !!"<<endl;
         goto citire;
     }
     else
     {
-
-        system("cls");
-        goto START;
+        if(strcmp(s,"1")==0)
+        {system("cls");
+        goto START;}
+        else return 0;
     }
 }
